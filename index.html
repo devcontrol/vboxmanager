@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>VboxmanagerJS by flipflopsimsommer</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">VboxmanagerJS</h1>
+        <p class="header">VboxManage with Nodejs</p>
+
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/flipflopsimsommer/vboxmanager/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/flipflopsimsommer/vboxmanager/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/flipflopsimsommer/vboxmanager">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/flipflopsimsommer">flipflopsimsommer</a></p>
+
+
+      </header>
+      <section>
+        <h1>
+<a name="vboxmanager" class="anchor" href="#vboxmanager"><span class="octicon octicon-link"></span></a>VBoxmanager</h1>
+
+<h2>
+<a name="overview" class="anchor" href="#overview"><span class="octicon octicon-link"></span></a>Overview</h2>
+
+<p><em>VBoxmanager</em> is a VirtualBox manager library for <a href="http://nodejs.org">node</a>.
+With it, you can:</p>
+
+<ul>
+<li>List virtuals machines</li>
+<li>get informations about a VM</li>
+<li>Start/Stop/Pause/Resume a VM</li>
+<li>Modifty memory</li>
+<li>Modify number of CPUs</li>
+<li>Clone/Delete</li>
+</ul><h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<pre><code>$ npm install vboxmanager
+</code></pre>
+
+<h2>
+<a name="example" class="anchor" href="#example"><span class="octicon octicon-link"></span></a>Example</h2>
+
+<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">vbox</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'vboxmanager'</span><span class="p">).</span><span class="nx">vboxmanager</span><span class="p">;</span>
+<span class="nx">vbox</span><span class="p">.</span><span class="nx">getVMS</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span>
+  <span class="c1">// Get the first VM </span>
+  <span class="kd">var</span> <span class="nx">box</span> <span class="o">=</span> <span class="nx">myVMS</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'VM Name: '</span> <span class="p">,</span> <span class="nx">box</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'VM UID: '</span>  <span class="p">,</span> <span class="nx">uid</span><span class="p">);</span>
+  <span class="c1">// Clone the VM</span>
+  <span class="nx">box</span><span class="p">.</span><span class="nx">cloneMe</span><span class="p">(</span><span class="s1">'MyNewVM'</span> <span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span> <span class="p">,</span> <span class="nx">new_box</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">error</span><span class="p">){</span>
+      <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="c1">// set memory to 2048M</span>
+    <span class="nx">new_box</span><span class="p">.</span><span class="nx">setMemory</span><span class="p">(</span><span class="mi">2048</span> <span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+      <span class="c1">// set 4 cpus</span>
+      <span class="nx">new_box</span><span class="p">.</span><span class="nx">setCPUS</span><span class="p">(</span><span class="mi">4</span> <span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+        <span class="c1">// Start the VM</span>
+        <span class="nx">box</span><span class="p">.</span><span class="nx">start</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+          <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Gogogo !'</span><span class="p">);</span>
+        <span class="p">});</span>
+      <span class="p">});</span>
+    <span class="p">});</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+
+</pre></div>
+
+<h2>
+<a name="example-for-remote-connection" class="anchor" href="#example-for-remote-connection"><span class="octicon octicon-link"></span></a>Example for remote connection</h2>
+
+<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">vbox</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'vboxmanager'</span><span class="p">).</span><span class="nx">vboxmanager</span><span class="p">;</span>
+<span class="nx">vbox</span><span class="p">.</span><span class="nx">setRemote</span><span class="p">(</span><span class="s1">'10.8.0.X'</span><span class="p">,</span>
+    <span class="p">{</span>
+        <span class="nx">username</span><span class="o">:</span> <span class="s1">'userrunningvbox'</span><span class="p">,</span>
+        <span class="nx">passphrase</span><span class="o">:</span> <span class="s1">'somePasswordIfAny'</span><span class="p">,</span>
+        <span class="nx">privateKey</span><span class="o">:</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'fs'</span><span class="p">).</span><span class="nx">readFileSync</span><span class="p">(</span><span class="s1">'/home/userrunningnodejs/.ssh/id_rsa'</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">);</span>
+</pre></div>
+
+<h2>
+<a name="running-tests" class="anchor" href="#running-tests"><span class="octicon octicon-link"></span></a>Running tests</h2>
+
+<p>To run the tests for <em>vboxmanager</em> simply run:</p>
+
+<pre><code>$ make test
+</code></pre>
+
+<p>To run <em>remote</em> tests edit /test/config.js</p>
+
+<h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>(The MIT License)</p>
+
+<p>Copyright (c) 2013 Xavier TALANDIER <a href="mailto:xavier@talandier.fr">xavier@talandier.fr</a> </p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="http://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
+  </body>
+</html>
