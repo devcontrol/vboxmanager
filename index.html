@@ -31,15 +31,16 @@
       </header>
       <section>
         <h1>
-<a name="vboxmanager" class="anchor" href="#vboxmanager"><span class="octicon octicon-link"></span></a>VBoxmanager</h1>
+<a name="vboxmanagerjs" class="anchor" href="#vboxmanagerjs"><span class="octicon octicon-link"></span></a>VBoxmanagerjs</h1>
 
 <h2>
 <a name="overview" class="anchor" href="#overview"><span class="octicon octicon-link"></span></a>Overview</h2>
 
-<p><em>VBoxmanager</em> is a VirtualBox manager library for <a href="http://nodejs.org">node</a>.
+<p><em><a href="http://vbox.npm.devcontrol.org">VBoxmanagerjs</a></em> is a VirtualBox manager library for <a href="http://nodejs.org">nodeJs</a>.
 With it, you can:</p>
 
 <ul>
+<li>conntect to local or remote(ssh) Host</li>
 <li>List virtuals machines</li>
 <li>get informations about a VM</li>
 <li>Start/Stop/Pause/Resume a VM</li>
@@ -49,13 +50,13 @@ With it, you can:</p>
 </ul><h2>
 <a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
 
-<pre><code>$ npm install vboxmanager
+<pre><code>$ npm install vboxmanagerjs
 </code></pre>
 
 <h2>
 <a name="example" class="anchor" href="#example"><span class="octicon octicon-link"></span></a>Example</h2>
 
-<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">vbox</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'vboxmanager'</span><span class="p">).</span><span class="nx">vboxmanager</span><span class="p">;</span>
+<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">vbox</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'vboxmanagerjs'</span><span class="p">).</span><span class="nx">vboxmanager</span><span class="p">;</span>
 <span class="nx">vbox</span><span class="p">.</span><span class="nx">getVMS</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span>
   <span class="c1">// Get the first VM </span>
   <span class="kd">var</span> <span class="nx">box</span> <span class="o">=</span> <span class="nx">myVMS</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
@@ -84,7 +85,7 @@ With it, you can:</p>
 <h2>
 <a name="example-for-remote-connection" class="anchor" href="#example-for-remote-connection"><span class="octicon octicon-link"></span></a>Example for remote connection</h2>
 
-<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">vbox</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'vboxmanager'</span><span class="p">).</span><span class="nx">vboxmanager</span><span class="p">;</span>
+<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">vbox</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'vboxmanagerjs'</span><span class="p">).</span><span class="nx">vboxmanager</span><span class="p">;</span>
 <span class="nx">vbox</span><span class="p">.</span><span class="nx">setRemote</span><span class="p">(</span><span class="s1">'10.8.0.X'</span><span class="p">,</span>
     <span class="p">{</span>
         <span class="nx">username</span><span class="o">:</span> <span class="s1">'userrunningvbox'</span><span class="p">,</span>
@@ -105,11 +106,18 @@ With it, you can:</p>
 <p>To run <em>remote</em> tests edit /test/config.js</p>
 
 <h2>
+<a name="contribution" class="anchor" href="#contribution"><span class="octicon octicon-link"></span></a>Contribution</h2>
+
+<p>Tests and bugfixes and ideas can be subbmited to <a href="https://github.com/devcontrol/vboxmanager/issues">github</a> issue or via email to: clemo|at|cbcode.at<br>
+feel free to send me a pull request, if you implemented a new feacher.     </p>
+
+<h2>
 <a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
 
 <p>(The MIT License)</p>
 
-<p>Copyright (c) 2013 Xavier TALANDIER <a href="mailto:xavier@talandier.fr">xavier@talandier.fr</a> </p>
+<p>Copyright (c) 2014 Clemens Burger <a href="mailto:clemo@cbcode.at">clemo@cbcode.at</a><br>
+Copyright (c) 2013 Xavier TALANDIER <a href="mailto:xavier@talandier.fr">xavier@talandier.fr</a></p>
 
 <p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
 
