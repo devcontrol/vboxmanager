@@ -13,11 +13,11 @@ With it, you can:
  * Clone/Delete
  
 ## Installation
-    $ npm install vboxmanager
+    $ npm install vboxmanagerjs
 
 ## Example
 ````javascript
-var vbox = require('vboxmanager').vboxmanager;
+var vbox = require('vboxmanagerjs').vboxmanager;
 vbox.getVMS(function(
   // Get the first VM 
   var box = myVMS[0];
@@ -45,7 +45,7 @@ vbox.getVMS(function(
 
 ## Example for remote connection
 ````javascript
-var vbox = require('vboxmanager').vboxmanager;
+var vbox = require('vboxmanagerjs').vboxmanager;
 vbox.setRemote('10.8.0.X',
     {
         username: 'userrunningvbox',
