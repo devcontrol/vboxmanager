@@ -1,16 +1,11 @@
 {
-  "name": "vboxmanager",
-  "description": "Manage virtulbox",
+  "name": "vboxmanagerJs",
+  "description": "Manage virtulbox in nodejs",
   "version": "0.0.1",
-  "author": {
-    "name": "Xavier TALANDIER",
-    "email": "xavier@talandier.fr"
-  },
+  "author": "Clemens Burger <clemo@cbcode.at>",
   "contributors": [
-    {
-      "name": "Xavier TALANDIER",
-      "email": "xavier@talandier.fr"
-    }
+    "Xavier TALANDIER <xavier@talandier.fr>",
+    "Clemens Burger <clemo@cbcode.at>"
   ],
   "dependencies": {},
   "devDependencies": {
@@ -27,7 +22,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/xtalandier/vboxmanager"
+    "url": "git://github.com/devcontrol/vboxmanager"
   },
   "main": "index",
   "scripts": {
@@ -37,5 +32,12 @@
   "engines": {
     "node": "*"
   },
-  "readmeFilename": "README.md"
+  "bugs": {
+    "url": "https://github.com/devcontrol/vboxmanager/issues"
+  },
+  "homepage": "https://github.com/devcontrol/vboxmanager",
+  "directories": {
+    "test": "test"
+  },
+  "license": "MIT"
 }
