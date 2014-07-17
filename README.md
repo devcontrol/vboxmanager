@@ -1,7 +1,7 @@
 # VBoxmanager
 
 ## Overview
-_[VBoxmanagerJs](http://vbox.npm.devcontrol.org)_ is a VirtualBox manager library for [nodeJs](http://nodejs.org).
+_[VBoxmanagerjs](http://vbox.npm.devcontrol.org)_ is a VirtualBox manager library for [nodeJs](http://nodejs.org).
 With it, you can:
 
  * conntect to local or remote(ssh) Host
