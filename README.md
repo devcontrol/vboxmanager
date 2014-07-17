@@ -1,4 +1,4 @@
-# VBoxmanager
+# VBoxmanagerjs
 
 ## Overview
 _[VBoxmanagerjs](http://vbox.npm.devcontrol.org)_ is a VirtualBox manager library for [nodeJs](http://nodejs.org).
@@ -66,7 +66,7 @@ To run _remote_ tests edit /test/config.js
 ## Contribution
 
 Tests and bugfixes and ideas can be subbmited to [github](https://github.com/devcontrol/vboxmanager/issues) issue or via email to: clemo|at|cbcode.at     
-feel free to send me your pull request, if you implemented a new feacher.     
+feel free to send me a pull request, if you implemented a new feacher.     
 
 
 

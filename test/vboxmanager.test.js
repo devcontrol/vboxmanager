@@ -1,3 +1,14 @@
+function makeid()
+{
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for( var i=0; i < 5; i++ )
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    return text;
+}
+
 var vbox = require('../').vboxmanager,
     request = require('supertest'),
     should = require('should');
@@ -15,7 +26,7 @@ if (typeof config === 'undefined') {
 describe('VBoxManager', function() {
     describe('#getVMS', function() {
         it('should be an instance of vbox', function(done) {
-            vbox.createVm('testVm', function(error, vm) {
+            vbox.createVm('testVm'+makeid(), function(error, vm) {
                 var iserror = (typeof error != 'undefined');
                 iserror.should.be.equal(false);
                 vm.should.be.an.instanceOf(vbox);
