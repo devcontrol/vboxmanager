@@ -2,15 +2,17 @@
 
 ## Overview
 _[VBoxmanagerjs](http://vbox.npm.devcontrol.org)_ is a VirtualBox manager library for [nodeJs](http://nodejs.org).
-With it, you can:
+With it, you are able to:
 
- * conntect to local or remote(ssh) Host
- * List virtuals machines
- * get informations about a VM
+ * connect to local or remote(ssh) Host
+ * List virtual machines
+ * get information about a VM
  * Start/Stop/Pause/Resume a VM
  * Modifty memory
  * Modify number of CPUs
- * Clone/Delete
+ * Clone
+ * Delete
+ * Create
  
 ## Installation
     $ npm install vboxmanagerjs
@@ -61,7 +63,20 @@ To run the tests for _vboxmanager_ simply run:
 
     $ make test
     
-To run _remote_ tests edit /test/config.js
+To run _remote_ tests edit /test/config.js    
+
+__this module is tested with the following nodejs versions using [n](https://www.npmjs.org/package/n) __
+
+ * 0.8.14
+ * 0.8.17
+ * 0.8.27
+ * 0.9.6
+ * 0.9.12
+ * 0.10.0
+ * 0.10.2
+ * 0.10.26
+ * 0.10.29
+ * 0.11.13
 
 ## Contribution
 
