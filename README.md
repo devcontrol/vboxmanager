@@ -8,7 +8,7 @@ With it, you are able to:
  * List virtual machines
  * get information about a VM
  * Start/Stop/Pause/Resume a VM
- * Modifty memory
+ * Modity memory
  * Modify number of CPUs
  * Clone
  * Delete
