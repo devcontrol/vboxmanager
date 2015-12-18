@@ -48,7 +48,6 @@ describe('VBoxManager', function() {
         describe('#getInfos', function() {
             it('should return an object', function(done) {
                 box.getInfos(function(infos) {
-                	console.log(infos);
                     var exists = infos.name !== undefined;
                     exists.should.be.equal(true);
                     done();

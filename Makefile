@@ -1,8 +1,5 @@
 MOCHA_REPORTER = spec
 UNIT_TESTS = $(shell find test/ -name "*.test.js")
-
-
-
 test:
 	clear
 	@NODE_ENV=test ./node_modules/.bin/mocha \
@@ -13,6 +10,4 @@ test:
 		--slow 50 \
 		--growl \
 		$(UNIT_TESTS)
-
-
 .PHONY: test

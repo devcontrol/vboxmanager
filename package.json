@@ -1,7 +1,7 @@
 {
   "name": "vboxmanagerjs",
   "description": "Manage virtualbox in nodejs for local and remote host",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "author": "Clemens Burger <clemo@cbcode.at>",
   "contributors": [
     "Xavier TALANDIER <xavier@talandier.fr>",
